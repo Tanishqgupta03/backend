@@ -52,7 +52,7 @@ const userSchema = new Schema({
 //userSchema.pre("save", ()=>{}) ye ase nhi chalega as arrow function m hamare pass this k reference nhi hota.
 //middlewear h ye
 userSchema.pre("save", async function (next) {
-    if(!this.isModified("passwprd")) return next();
+    if(!this.isModified("password")) return next();
 
     this.password != bcrypt.hash(this.password, 10)
     next()
