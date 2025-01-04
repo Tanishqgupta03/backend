@@ -24,4 +24,20 @@ app.use(express.static("public"))//kayi baar hum files images store karana chaha
 
 app.use(cookieParser())
 
+
+//routes
+import  userRouter from './routes/user.routes.js'
+
+//routes declaration
+
+  //agr hum issi file m routes bhi likhte then hume app.get() krke krn apadta 
+
+  // lekin ab hum dusri file se route export kr rahe hein isilye hume app.use()
+
+app.use("/api/v1/users", userRouter)
+
+// to ab smjho kesa url banega ye /api/v1/users ek prefix ki tarah react krega 
+//api/v1 means version is the standard practice
+//now http//----/api/v1/users/register
+
 export { app }
