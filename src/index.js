@@ -29,10 +29,10 @@ The connectDB function is asynchronous and uses mongoose.connect, which returns 
  */
 
 import connectDB from "./db/index.js";
-import { config } from "dotenv";
 import { app } from "./app.js";
 
-config(); // This loads all environment variables
+import dotenv from 'dotenv';
+dotenv.config(); // Load environment variables at the very top
 
 const PORT = process.env.PORT || 8000;
 

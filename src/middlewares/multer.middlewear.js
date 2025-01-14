@@ -15,6 +15,10 @@ const storage = multer.diskStorage({
         //user k paas 5 shubhi naam ki files hon tb over write ho jayengi.
         //ye file vese to bht kum time k liye rahengi ki file ayi then cloud pr upload fir storage se delete
         // but tb bhi best option upr commented vala h.
+
+        // filename: (req, file, cb) => {
+        //     cb(null, `${Date.now()}-${file.originalname}`); // Append timestamp to filename
+        // }
     }
 })
 
